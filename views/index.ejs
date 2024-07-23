@@ -1,0 +1,32 @@
+<!--HEADER-->
+<%- include("partials/header.ejs") %>
+
+<!--HOME PAGE-->
+
+<!--Generate a new post-->
+<div id="newPostContainer" class="container">
+    <form action="/submit" method="POST">
+        <input type="text" name="newPost" placeholder="Write your post here...">
+        <input type="submit" value="addNewPost">
+    </form>
+</div>
+
+<!--Post listing-->
+<div id="postListing" class="container">
+    <ul>
+        <%for (var i = 0; i < postListing.length; ++i) { %>
+            <li>
+                <div class="singlePostContainer">
+                        <h2><% posts %></h2>
+                        <div id="deleteIcon"></div>
+                        <div id="editIcon"></div>
+                        <div id="openIcon"></div>
+                </div>
+            </li>
+        <%}%>
+    </ul>
+</div>
+
+
+<!--FOOTER-->
+<%- include("partials/footer.ejs") %>
