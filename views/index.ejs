@@ -2,13 +2,14 @@
 <%- include("partials/header.ejs") %>
 
 <!--HOME PAGE-->
-<h1>Write your post here:</h1>
+
 
 <!--Generate a new post-->
 <div id="newPostContainer" class="container">
+    <h1>Write your post here:</h1>
     <form action="/submit" method="POST">
-        <input type="text" name="newPost" placeholder="Write your post here...">
-        <input type="submit" value="addNewPost">
+        <input type="text" name="newPost" placeholder="Write your post here..." class="insertPost">
+        <input type="submit" value="Add new post" class="button">
     </form>
 </div>
 
@@ -30,16 +31,18 @@
                             </form>
                         <% } else { %>
                             <h2><%= posts[i] %></h2>
-                            <!--Delete post-->
-                            <form method="POST" action="/delete">
-                                <input type="hidden" name="delete" value="<%= i %>">
-                                <button type="submit"><i class="fas fa-trash-alt"></i></button>
-                            </form>
-                            <!--Edit post-->
-                            <form method="POST" action="/edit">
-                                <input type="hidden" name="edit" value="<%= i %>">
-                                <button type="submit"><i class="fas fa-pencil-alt"></i></button>
-                            </form>
+                            <div id="buttonContainer">
+                                <!--Delete post-->
+                                <form method="POST" action="/delete">
+                                    <input type="hidden" name="delete" value="<%= i %>">
+                                    <button type="submit"><i class="fas fa-trash-alt"></i></button>
+                                </form>
+                                <!--Edit post-->
+                                <form method="POST" action="/edit">
+                                    <input type="hidden" name="edit" value="<%= i %>">
+                                    <button type="submit"><i class="fas fa-pencil-alt"></i></button>
+                                </form>
+                            </div>
                         <% } %>
                     </div>
                 </li>

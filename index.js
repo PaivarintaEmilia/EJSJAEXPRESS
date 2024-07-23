@@ -10,6 +10,9 @@ app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
 
+// Add CSS
+app.use(express.static("public"));
+
 // Tarvitaan array johon tallennetaan postaukset ja jotka
 // näytetään clientin puolella
 var postListing = [];
