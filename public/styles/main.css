@@ -13,6 +13,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 50px;
 }
 
 /*Container | Create new post*/
@@ -36,7 +37,6 @@ main {
 }
 
 .button {
-    display: block;
     border: 0.2px solid rgba(0, 0, 0, 0.281);
     background-color: rgb(218, 255, 196);
     text-transform: capitalize;
@@ -65,14 +65,18 @@ li {
     list-style: none;
 }
 
+ul {
+    padding: 0; /* Poistaa sisäiset reunat */
+}
+
 .singlePostContainer {
     display: flex;
     flex-direction: row;
     gap: 20px;
-    align-items: center;
-    border: 0.2px solid rgba(0, 0, 0, 0.281);
-    border-radius: 10px;
-    padding: 5px;
+    justify-content: space-between;
+    width: 100%;
+    border-bottom: 0.2px solid rgba(0, 0, 0, 0.281);
+    padding: 10px 5px;
 }
 
 h2 {
@@ -85,30 +89,84 @@ h2 {
     /*Miten nämä saa siirrettyä oikealle?*/
     display: flex;
     flex-direction: row;
+    gap: 7px;
+    justify-items: center;
+    border: 0.2px solid rgb(255, 3, 3)
 }
 
 
 /*Icons*/
 
-.fas {
-    width: 40px; /* Button size */
-    height: 40px; /* Button size */
-    background-color: green; /* Background color */
-    border: 2px solid darkgreen; /* Border color */
-    border-radius: 50%; /* Circular shape */
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.material-icons {
+    background: none; /* Remove any background */
+    padding: 0; /* Remove any padding */
+    margin: 0; /* Remove any margin */
+    box-sizing: content-box; /* Ensure box-sizing does not affect size */
+}
+
+.iconButton {
+    color: rgb(83, 83, 83);
+    border: 0.2px solid rgb(158, 255, 102); /* Lisää kehyksen ikoniin */
+    border-radius: 50%; /* Muuttaa ikonin pyöreäksi */
+    padding: 5px; /* Lisää paddingia ikonin ympärille */
+    opacity: 0.5;
+    background-color: rgb(218, 255, 196);
+    cursor: pointer;
     padding: 0; /* Remove padding */
-    cursor: pointer; /* Pointer cursor on hover */
+    width: 50px;
+    height: 50px;
 }
 
-.fas i {
-    font-size: 20px; /* Icon size */
-    color: gray; /* Icon color */
-    margin: 0; /* Remove margin */
+.icon-button:hover {
+    opacity: 1; /* Täysin näkyvä hover-tilassa */
+    background-color: rgb(191, 255, 154);
 }
 
-.fas:hover {
-    background-color: darkgreen; /* Change background color on hover */
+
+/*Edit post*/
+
+.buttonEdit {
+    border: 0.2px solid rgba(0, 0, 0, 0.281);
+    background-color: rgb(218, 255, 196);
+    text-transform: capitalize;
+    padding: 10px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.5s ease-in-out;
+    font-size: 10px;
+}
+
+#editBox {
+    padding: 15px 25px;
+    border: 0.2px solid rgba(0, 0, 0, 0.281);
+    border-radius: 7px;
+}
+
+/* Tekstikentän tyyli */
+#editBox {
+    width: 300px; /* Tekstikentän leveys */
+    padding: 10px; /* Sisäiset reunat */
+    margin: 10px 0; /* Ulkoiset reunat ylhäältä ja alhaalta */
+    box-sizing: border-box; /* Sisältää paddingin ja borderin leveydessä */
+    border: 2px solid #ffffff; /* Reunan väri */
+    border-radius: 5px; /* Reunan pyöristys */
+    font-size: 16px; /* Fonttikoko */
+    background-color: #ffffff81; /* Taustaväri */
+    transition: border-color 0.3s; /* Reunan värin muutos animaation kesto */
+}
+
+/* Tekstikentän hover- ja fokus-tyylit */
+#editBox:focus {
+    border-color: #66e9b270; /* Reunan väri fokus-tilassa */
+    outline: none; /* Poistaa oletusfokuksen */
+    box-shadow: 0 0 5px rgba(102, 175, 233, 0.6); /* Varjostus fokus-tilassa */
+}
+
+
+
+.testingButtonContainer {
+    border: 0.2px solid rgba(255, 5, 180, 0.281);
+    display: flex;
+    justify-content: center;
+    gap: 7px;
 }

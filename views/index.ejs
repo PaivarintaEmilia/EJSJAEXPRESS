@@ -24,9 +24,12 @@
                             <!--Edit post functionality | edit form-->
                             <form action="/update" method="POST">
                                 <input type="hidden" name="index" value="<%= i %>">
-                                <input type="text" name="updatedPost" value="<%= posts[i] %>">
-                                <button type="submit">Update</button>
-                                <button type="button" onclick="window.location.href='/'">Cancel</button>
+                                <input type="text" id="editBox" name="updatedPost" value="<%= posts[i] %>">
+                                <div class="testingButtonContainer">
+                                    <button type="submit" class="buttonEdit">Update</button>
+                                    <button type="button" class="buttonEdit" onclick="window.location.href='/'">Cancel</button>
+                                </div>
+                                
                                 <!--Voidaanko laittaa tähän kohtaan editIndex=null??-->
                             </form>
                         <% } else { %>
@@ -35,12 +38,12 @@
                                 <!--Delete post-->
                                 <form method="POST" action="/delete">
                                     <input type="hidden" name="delete" value="<%= i %>">
-                                    <button type="submit"><i class="fas fa-trash-alt"></i></button>
+                                    <button type="submit" class="iconButton"><i class="material-icons">delete</i></button>
                                 </form>
                                 <!--Edit post-->
                                 <form method="POST" action="/edit">
                                     <input type="hidden" name="edit" value="<%= i %>">
-                                    <button type="submit"><i class="fas fa-pencil-alt"></i></button>
+                                    <button type="submit" class="iconButton"><i class="material-icons">edit</i></button>
                                 </form>
                             </div>
                         <% } %>
